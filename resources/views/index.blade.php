@@ -15,45 +15,40 @@
 </head>
 <body class="font-sans antialiased">
 <main class="">
-    <section class="bg-light min-h-screen items-center justify-center relative border-8 border-[#88ff88]">
+    <section class="bg-light min-h-screen items-center justify-center relative border-8 border-green">
         @include('header')
 
-        <div class="flex mt-16">
+        <div class="flex mt-16 w-full">
             <div class="container mx-auto flex flex-col md:flex-row items-start justify-between z-10 px-6 gap-16">
 
                 <!-- Left Column -->
-                <div class="md:w-2/5">
-                    <!-- Review Text - Different Colors and Sizes -->
+                <div class="md:w-2/5 w-full">
                     <h1 class="font-bold leading-none">
-                        <span class="block text-[110px] text-blue text-left mb-[-2.5rem]">Review</span>
-                        <span class="block text-[110px] text-green text-center mb-[-2.5rem]">Review</span>
-                        <span class="block text-[110px] text-black text-right ">Review</span>
-                        <span class="block text-[110px] text-green text-center  leading-[5rem]">ktoré ťa posunie</span>
+                        <span class="block text-[70px] sm:text-[90px] md:text-[110px] text-blue text-left mb-[-1rem] sm:mb-[-2.5rem]">Review</span>
+                        <span class="block text-[70px] sm:text-[90px] md:text-[110px] text-green text-center mb-[-1rem] sm:mb-[-2.5rem]">Review</span>
+                        <span class="block text-[70px] sm:text-[90px] md:text-[110px] text-black text-right">Review</span>
+                        <span class="block text-[70px] sm:text-[90px] md:text-[110px] text-green text-center leading-[3rem] sm:leading-[5rem]">ktoré ťa posunie</span>
                     </h1>
                 </div>
 
                 <!-- Right Column -->
-                <div class="md:w-2/5 mt-10 md:mt-0">
-                    <!-- Paragraph -->
-                    <p class="text-[38px] leading-snug font-bold text-black">
+                <div class="md:w-2/5 mt-10 md:mt-0 flex flex-col items-center md:items-start">
+                    <p class="text-[30px] md:text-[38px] leading-snug font-bold text-black text-center md:text-left">
                         Vždy si túžil po feedbacku, ktorý ťa posunie? Tento ťa môže poslať na kávu s Wosom
                         <span class="text-green font-bold">alebo až do Devína.</span>
                     </p>
-
-                    <!-- Blue Cart Icon (use an image or SVG) -->
-                    <div class="relative mt-16" style="width: 285px; height: 141px;">
+                    <div class="relative mt-16 flex justify-center mb-64 lg:mb-0" style="width: 285px; height: 141px;">
                         <!-- Cart Image -->
                         <img src="{{ asset('images/cart.png') }}" alt="Cart Icon" class="absolute top-0 left-0 w-28 h-auto animate-driveDiagonal">
                         <!-- Rails Image -->
                         <img src="{{ asset('images/rails.png') }}" alt="Rails Icon" class="absolute bottom-0 right-0 w-56 h-auto">
                     </div>
                 </div>
-            </div>
-
-            <!-- Scroll Icon at the Bottom Center -->
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center">
-                <div class="animate-bounce">
-                    <img src="{{ asset('images/scroll.png') }}" alt="scroll icon" class="w-20 h-auto">
+                <!-- Scroll Icon at the Bottom Center -->
+                <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center">
+                    <div class="animate-bounce">
+                        <img src="{{ asset('images/scroll.png') }}" alt="scroll icon" class="w-16 md:w-20 h-auto">
+                    </div>
                 </div>
             </div>
         </div>
