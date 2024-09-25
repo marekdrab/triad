@@ -48,16 +48,17 @@ function initializePersonMovement() {
     const person = document.getElementById('person');
     const percentage = document.getElementById('percentage');
     const dashedLine = document.querySelector('.border-dashed');
+    const house = document.getElementById('house'); // Added the house element
 
-    if (!person || !percentage || !dashedLine) {
-        console.error('Person, percentage, or dashed line elements not found');
+    if (!person || !percentage || !dashedLine || !house) {
+        console.error('Person, percentage, dashed line, or house elements not found');
         return;
     }
 
-    const lineWidth = dashedLine.offsetWidth;
     const personWidth = person.offsetWidth;
+    const houseLeftPosition = house.getBoundingClientRect().left - dashedLine.getBoundingClientRect().left;
 
-    const totalMove = lineWidth - personWidth;
+    const totalMove = houseLeftPosition - personWidth; //person should move to the edge of the house
 
     function movePerson() {
         let currentPosition = 0;
@@ -65,17 +66,16 @@ function initializePersonMovement() {
             if (currentPosition <= totalMove) {
                 person.style.left = currentPosition + "px";
 
+                // Update percentage position and value
                 const percentComplete = Math.round((currentPosition / totalMove) * 100);
-                percentage.style.left = currentPosition + "px"; // Adjust percentage position
-                percentage.innerText = percentComplete + "%"; // Update the percentage value
+                percentage.innerText = percentComplete + "%"; // update the percentage value
 
-                currentPosition += 5; // Adjust the speed of movement (increase or decrease)
+                currentPosition += 5; // speed of movement
             } else {
-                clearInterval(interval);
+                clearInterval(interval); // stop animation once it reaches the house
             }
-        }, 50); // Adjust the speed (lower value = faster movement)
+        }, 50); // speed (lower value = faster movement)
     }
 
-    // Start the person movement
     movePerson();
 }
