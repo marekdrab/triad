@@ -62,25 +62,26 @@
 
     <!-- Section 2 -->
     <section id="section2" class="flex flex-col md:flex-row h-screen">
-        <div class="container mx-auto flex flex-col md:flex-row items-center bg-light md:w-1/2 px-8">
-            <!-- Text Column -->
-            <div class="flex mt-16 w-full flex-col ">
-                <h2 class="text-3xl font-bold">Opíš nám svoju prácu, s ktorou si fakt spokojný 🙌</h2>
-                <p class="mt-4"><span class="font-bold">Najskôr ti ju okomentuje naše AI vytrénované na svetových prácach.</span>
+        <div class="mx-auto flex flex-col items-start justify-center bg-light md:w-1/2 px-16 py-60 md:py-32">
+            <div class="mt-8 md:mt-0">
+                <h2 class="text-2xl md:text-3xl font-bold">Opíš nám svoju prácu, s ktorou si fakt spokojný 🙌</h2>
+                <p class="mt-4 text-base md:text-lg"><span class="font-bold">Najskôr ti ju okomentuje naše AI vytrénované na svetových prácach.</span>
                     A kým si urobíš čaj, môže prísť pozvanie na kávu od nás.</p>
             </div>
         </div>
-        <div class="container mx-auto flex flex-col items-center bg-green md:w-1/2 px-8 justify-center">
-            <div class="flex flex-row items-center">
-                <img src="{{ asset('images/wosa.png') }}" alt="wosa" class="w-48 md:w-48 h-auto">
-                <div>
-                    <h2 class="text-3xl font-bold"><span class="text-light">Wosa</span> ti dá feedback</h2>
-                    <p><span class="font-bold">Chief Creative and Strategy Officer</span> pre slovenský a <br>český
-                        TRIAD. </p>
+
+        <div class="mx-auto flex flex-col items-center justify-center bg-green md:w-1/2 px-16 py-24 md:py-32">
+            <div class="flex flex-col lg:flex-row items-center">
+                <img src="{{ asset('images/wosa.png') }}" alt="wosa" class="w-40 md:w-48 h-auto mb-4 md:mb-0">
+
+                <div class="text-center md:text-left md:ml-4">
+                    <h2 class="text-2xl md:text-3xl font-bold"><span class="text-light">Wosa</span> ti dá feedback</h2>
+                    <p class="text-base md:text-lg"><span class="font-bold">Chief Creative and Strategy Officer</span> pre slovenský a <br>český TRIAD.</p>
                 </div>
             </div>
-            <div class="">
-                <p class="mt-4">Držtieľ ocenenia Filip, <span class="font-bold">majiteľ stoviek ocenení</span> od
+
+            <div class="mt-6 md:mt-4 text-center md:text-left">
+                <p class="text-base md:text-lg">Držtieľ ocenenia Filip, <span class="font-bold">majiteľ stoviek ocenení</span> od
                     slovenských grand prix, cez New York až po globálne ocenenia na Warc, Effie Saber</p>
             </div>
         </div>
