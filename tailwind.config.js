@@ -12,6 +12,7 @@ module.exports = {
                 black: '#1A1A1A',
                 green: '#81DD77',
                 blue: '#91DDEE',
+                darkBlue: '#0000FF',
                 light: '#F2F0E4'
             },
             keyframes: {

@@ -16,7 +16,7 @@
 <body class="font-sans antialiased">
 <main class="">
     <section class="bg-light min-h-screen items-center justify-center relative border-8 border-green">
-        @include('header')
+        @include('partials.header')
 
         <div class="flex mt-16 w-full">
             <div class="container mx-auto flex flex-col md:flex-row items-start justify-between z-10 px-6 gap-16">
@@ -24,10 +24,14 @@
                 <!-- Left Column -->
                 <div class="md:w-2/5 w-full">
                     <h1 class="font-bold leading-none">
-                        <span class="block text-[70px] sm:text-[90px] md:text-[110px] text-blue text-left mb-[-1rem] sm:mb-[-2.5rem]">Review</span>
-                        <span class="block text-[70px] sm:text-[90px] md:text-[110px] text-green text-center mb-[-1rem] sm:mb-[-2.5rem]">Review</span>
-                        <span class="block text-[70px] sm:text-[90px] md:text-[110px] text-black text-right">Review</span>
-                        <span class="block text-[70px] sm:text-[90px] md:text-[110px] text-green text-center leading-[3rem] sm:leading-[5rem]">ktoré ťa posunie</span>
+                        <span
+                            class="block text-[70px] sm:text-[90px] md:text-[110px] text-blue text-left mb-[-1rem] sm:mb-[-2.5rem]">Review</span>
+                        <span
+                            class="block text-[70px] sm:text-[90px] md:text-[110px] text-green text-center mb-[-1rem] sm:mb-[-2.5rem]">Review</span>
+                        <span
+                            class="block text-[70px] sm:text-[90px] md:text-[110px] text-black text-right">Review</span>
+                        <span
+                            class="block text-[70px] sm:text-[90px] md:text-[110px] text-green text-center leading-[3rem] sm:leading-[5rem]">ktoré ťa posunie</span>
                     </h1>
                 </div>
 
@@ -39,9 +43,11 @@
                     </p>
                     <div class="relative mt-16 flex justify-center mb-64 lg:mb-0" style="width: 285px; height: 141px;">
                         <!-- Cart Image -->
-                        <img src="{{ asset('images/cart.png') }}" alt="Cart Icon" class="absolute top-0 left-0 w-28 h-auto animate-driveDiagonal">
+                        <img src="{{ asset('images/cart.png') }}" alt="Cart Icon"
+                             class="absolute top-0 left-0 w-28 h-auto animate-driveDiagonal">
                         <!-- Rails Image -->
-                        <img src="{{ asset('images/rails.png') }}" alt="Rails Icon" class="absolute bottom-0 right-0 w-56 h-auto">
+                        <img src="{{ asset('images/rails.png') }}" alt="Rails Icon"
+                             class="absolute bottom-0 right-0 w-56 h-auto">
                     </div>
                 </div>
                 <!-- Scroll Icon at the Bottom Center -->
@@ -60,7 +66,8 @@
             <!-- Text Column -->
             <div class="flex mt-16 w-full flex-col ">
                 <h2 class="text-3xl font-bold">Opíš nám svoju prácu, s ktorou si fakt spokojný 🙌</h2>
-                <p class="mt-4"><span class="font-bold">Najskôr ti ju okomentuje naše AI vytrénované na svetových prácach.</span> A kým si urobíš čaj, môže prísť pozvanie na kávu od nás.</p>
+                <p class="mt-4"><span class="font-bold">Najskôr ti ju okomentuje naše AI vytrénované na svetových prácach.</span>
+                    A kým si urobíš čaj, môže prísť pozvanie na kávu od nás.</p>
             </div>
         </div>
         <div class="container mx-auto flex flex-col items-center bg-green md:w-1/2 px-8 justify-center">
@@ -68,117 +75,148 @@
                 <img src="{{ asset('images/wosa.png') }}" alt="wosa" class="w-48 md:w-48 h-auto">
                 <div>
                     <h2 class="text-3xl font-bold"><span class="text-light">Wosa</span> ti dá feedback</h2>
-                    <p><span class="font-bold">Chief Creative and Strategy Officer</span> pre slovenský a <br>český TRIAD. </p>
+                    <p><span class="font-bold">Chief Creative and Strategy Officer</span> pre slovenský a <br>český
+                        TRIAD. </p>
                 </div>
             </div>
             <div class="">
-                <p class="mt-4">Držtieľ ocenenia Filip, <span class="font-bold">majiteľ stoviek ocenení</span> od slovenských grand prix, cez New York až po globálne ocenenia na Warc, Effie Saber</p>
+                <p class="mt-4">Držtieľ ocenenia Filip, <span class="font-bold">majiteľ stoviek ocenení</span> od
+                    slovenských grand prix, cez New York až po globálne ocenenia na Warc, Effie Saber</p>
             </div>
         </div>
     </section>
 
-    <!-- Section 3 (Form) -->
-    <section id="section3" class="relative flex flex-col md:flex-row h-screen w-screen">
-        <!-- Left Column: Upload CV -->
-        <div class="flex flex-col justify-center items-center bg-blue md:w-1/2 py-8 px-16">
-            <div class="flex items-center mb-8">
-                <img src="{{ asset('images/number-one.png') }}" alt="number one" class="w-16 md:w-20 h-auto">
-                <h2 class="text-[60px] font-bold ml-4">Nahraj CV</h2>
-            </div>
+    <section id="section3" class=" relative flex flex-col md:flex-row h-screen w-screen">
 
-            <form class="w-full">
-                <!-- Name Input -->
-                <div class="mb-6">
-                    <label for="name" class="block text-sm font-medium text-black uppercase">Napíš nám ako sa voláš</label>
-                    <input type="text" id="name" name="name" placeholder="Meno a priezvisko" class="w-full p-4 mt-2 bg-light rounded-md" required>
+        <!-- Form Screen (Screen 1) -->
+        <form class=" w-full flex flex-col md:flex-row" id="upload-form" enctype="multipart/form-data">
+            @csrf
+
+            <div class="flex flex-col justify-center items-center bg-blue md:w-1/2 py-8 px-24">
+                <div class="flex items-center mb-8">
+                    <img src="{{ asset('images/number-one.png') }}" alt="number one" class="w-16 md:w-20 h-auto">
+                    <h2 class="text-[60px] font-bold ml-4">Nahraj CV</h2>
                 </div>
 
-                <!-- Email Input -->
-                <div class="mb-6">
+                <div class="mb-6 w-full">
+                    <label for="name" class="block text-sm font-medium text-black uppercase">Napíš nám ako sa
+                        voláš</label>
+                    <input type="text" id="name" name="name" placeholder="Meno a priezvisko"
+                           class="w-full p-4 mt-2 bg-light rounded-md" required>
+                </div>
+
+                <div class="mb-6 w-full">
                     <label for="email" class="block text-sm font-medium text-black uppercase">Kontakt na teba</label>
-                    <input type="email" id="email" name="email" placeholder="E-mail" class="w-full p-4 mt-2 bg-light rounded-md" required>
+                    <input type="email" id="email" name="email" placeholder="E-mail"
+                           class="w-full p-4 mt-2 bg-light rounded-md" required>
                 </div>
 
-                <!-- Custom File Input -->
-                <div class="relative flex items-center mb-6">
-                    <!-- Label for file input (Custom Design) -->
+                <div class="relative flex items-center mb-6 w-full">
                     <label for="cv-upload" class="font-bold text-lg text-black mr-2 cursor-pointer mb-2">
                         Nahraj svoje CV
                     </label>
                     <span class="text-gray-500 italic text-sm">PDF, JPG, PNG, DOC</span>
 
-                    <!-- Hidden default file input -->
-                    <input type="file" id="cv-upload" name="cv" class="hidden">
+                    <input type="file" id="cv-upload" name="cv" class="hidden" required>
 
-                    <!-- Custom underline -->
                     <div class="absolute bottom-0 left-0 w-32 h-[1px] bg-black"></div>
                 </div>
-            </form>
-        </div>
-
-        <!-- Chevron in the Middle -->
-        <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
-            <img src="{{ asset('images/chevron.png') }}" alt="Chevron" class="w-10 h-10 md:w-12 md:h-12">
-        </div>
-
-        <!-- Right Column: Describe Work -->
-        <div class="flex flex-col justify-center items-center bg-light md:w-1/2 py-8 px-16">
-            <div class="flex items-center mb-8">
-                <img src="{{ asset('images/number-two.png') }}" alt="number two" class="w-16 md:w-20 h-auto">
-                <h2 class="text-[60px] font-bold ml-4">Opíš prácu</h2>
             </div>
 
-            <form class="w-full">
-                <!-- Work Description Textarea -->
-                <div class="mb-6">
-                    <label for="work-description" class="block text-sm font-medium text-black mb-4 uppercase">Opis práce</label>
+            @include('partials.chevron')
+
+            <div class="flex flex-col justify-center items-center bg-light md:w-1/2 py-8 px-24">
+                <div class="flex items-center mb-8">
+                    <img src="{{ asset('images/number-two.png') }}" alt="number two" class="w-16 md:w-20 h-auto">
+                    <h2 class="text-[60px] font-bold ml-4">Opíš prácu</h2>
+                </div>
+
+                <div class="mb-6 w-full">
+                    <label for="work-description" class="block text-sm font-medium text-black mb-4 uppercase">Opis
+                        práce</label>
                     <div class="border-black border-2 rounded-md">
-                        <textarea id="work-description" name="work_description" rows="6" placeholder="Sem opíš svoju prácu, ktorú máš rád, alebo chceš vylepšiť"
-                                  class="w-full p-4 bg-light shadow-none focus:outline-none focus:ring-none" required maxlength="1000"></textarea>
+                    <textarea id="work-description" name="work_description" rows="6"
+                              placeholder="Sem opíš svoju prácu, ktorú máš rád, alebo chceš vylepšiť"
+                              class="w-full p-4 bg-light shadow-none focus:outline-none focus:ring-none" required
+                              maxlength="1000"></textarea>
                     </div>
                 </div>
 
-                <div class="flex flex-row justify-between">
-                    <!-- GDPR Consent Checkbox -->
+                <div class="flex flex-row justify-between w-full">
                     <div class="flex items-center mb-6">
-                        <input type="checkbox" id="gdpr" name="gdpr" class="h-5 w-5 rounded text-green-600 focus:ring-green-400" required>
-                        <label for="gdpr" class="ml-3 text-sm font-medium text-black">Súhlasím so spracovaním <a href="#" class="text-green underline underline-offset-2">osobných údajov</a></label>
+                        <input type="checkbox" id="gdpr" name="gdpr"
+                               class="h-5 w-5 rounded text-green-600 focus:ring-green-400" required>
+                        <label for="gdpr" class="ml-3 text-sm font-medium text-black">Súhlasím so spracovaním <a
+                                href="#" class="text-green underline underline-offset-2">osobných údajov</a></label>
                     </div>
-                    <!-- Submit Button -->
-                    <div class="">
-                        <button type="submit" class="w-full bg-green text-black font-bold p-4 rounded-md hover:bg-blue">
+
+                    <div>
+                        <button type="submit" class="bg-green text-black font-bold p-4 rounded-md hover:bg-blue">
                             Odošli a vyhodnoť
                         </button>
                     </div>
                 </div>
+            </div>
+        </form>
+    </section>
 
-            </form>
+    <section id="loading-screen" class="hidden relative flex flex-col md:flex-row h-screen">
+        <div class="container mx-auto flex flex-col md:flex-row items-center bg-light md:w-1/2 px-8">
+            @include('partials.thank-you-text-section')
+        </div>
+        <div class="container mx-auto flex flex-col items-center bg-green md:w-1/2 px-8 justify-center">
+            <div class="flex flex-row items-center">
+                <img src="{{ asset('images/wosa-upload.png') }}" alt="wosa" class="w-80 h-auto">
+            </div>
+            @include('partials.chevron')
+            <div class="flex flex-col items-center text-center">
+                <img src="{{ asset('images/soundbar.png') }}" alt="soundbar" class="w-[26rem] h-auto">
+                <p class="mt-4 font-bold">Chceš si feedback vypočuť neskôr? <a
+                        class="ml-4 underline underline-offset-8">Stiahni si ho</a></p>
+            </div>
         </div>
     </section>
 
-    <!-- Section 4 -->
-    <section id="section4" class="flex flex-row h-screen">
-        <div class="mx-auto bg-light">
+    <section id="success-screen" class="hidden relative flex flex-col md:flex-row h-screen">
+        <div class="container mx-auto flex flex-col md:flex-row items-center bg-light md:w-1/2 px-8">
+            @include('partials.thank-you-text-section')
         </div>
+        @include('partials.chevron')
+        <div class="container mx-auto flex flex-col items-center bg-green md:w-1/2 px-16 justify-center">
+            <div class="flex flex-col items-center text-center my-64 mx-8 md:mx-16 lg:mx-24">
+                <div class="mx-16">
+                    <h2 class="font-bold text-black text-4xl"><span class="text-light">Tvoje slová už letia</span> rýchlosťou internetu do Devína.</h2>
+                </div>
+
+                <div class="relative w-full h-32">
+                    <img id="person" src="{{ asset('images/person.png') }}" alt="Person" class="absolute left-0 w-16 top-1/4">
+
+                    <img id="person" src="{{ asset('images/path.png') }}" alt="Path" class="border-dashed absolute left-16 w-80 bottom-0">
+
+                    <span id="percentage" class="absolute bottom-0 text-darkBlue font-bold text-2xl right-20">0%</span>
+
+                    <img id="house" src="{{ asset('images/house.png') }}" alt="House" class="absolute right-0 w-16 top-1/4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section4" class="flex flex-row h-screen">
     </section>
 
 </main>
 
 
 @vite('resources/js/app.js')
-<!-- Form Submission Handling -->
 <script>
-    document.getElementById('submission-form').addEventListener('submit', function () {
-        // Show the waiting screen
-        document.getElementById('waiting-screen').classList.remove('hidden');
-    });
-</script>
-<script>
-    document.getElementById('cv-upload').addEventListener('change', function(){
+    document.getElementById('cv-upload').addEventListener('change', function () {
         var fileName = this.files[0].name;
         var label = document.querySelector('label[for="cv-upload"]');
         label.textContent = "Nahraj svoje CV: " + fileName;
     });
+</script>
+<script>
+
 </script>
 </body>
 </html>
