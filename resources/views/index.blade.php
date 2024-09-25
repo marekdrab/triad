@@ -202,8 +202,8 @@
         </div>
     </section>
 
-    <section id="section4" class="flex flex-row h-screen">
-    </section>
+{{--    <section id="section4" class="flex flex-row h-screen">--}}
+{{--    </section>--}}
 
 </main>
 
