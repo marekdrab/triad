@@ -23,7 +23,7 @@
 
                 <!-- Left Column -->
                 <div class="md:w-2/5 w-full">
-                    <h1 class="font-bold leading-none">
+                    <h1 class="font-bold leading-none px-8">
                         <span
                             class="block text-[70px] sm:text-[90px] md:text-[110px] text-blue text-left mb-[-1rem] sm:mb-[-2.5rem]">Review</span>
                         <span
@@ -61,8 +61,8 @@
     </section>
 
     <!-- Section 2 -->
-    <section id="section2" class="flex flex-col md:flex-row h-screen">
-        <div class="mx-auto flex flex-col items-start justify-center bg-light md:w-1/2 px-16 py-60 md:py-32">
+    <section id="section2" class="min-h-screen flex flex-col md:flex-row h-screen">
+        <div class=" mx-auto flex flex-col items-start justify-center bg-light md:w-1/2 px-16 py-44 md:py-32">
             <div class="mt-8 md:mt-0">
                 <h2 class="text-2xl md:text-3xl font-bold">Opíš nám svoju prácu, s ktorou si fakt spokojný 🙌</h2>
                 <p class="mt-4 text-base md:text-lg"><span class="font-bold">Najskôr ti ju okomentuje naše AI vytrénované na svetových prácach.</span>
@@ -70,7 +70,7 @@
             </div>
         </div>
 
-        <div class="mx-auto flex flex-col items-center justify-center bg-green md:w-1/2 px-16 py-24 md:py-32">
+        <div class=" mx-auto flex flex-col items-center justify-center bg-green md:w-1/2 px-16 py-24 md:py-32">
             <div class="flex flex-col lg:flex-row items-center">
                 <img src="{{ asset('images/wosa.png') }}" alt="wosa" class="w-40 md:w-48 h-auto mb-4 md:mb-0">
 
@@ -87,13 +87,13 @@
         </div>
     </section>
 
-    <section id="section3" class=" relative flex flex-col md:flex-row h-screen w-screen">
+    <section id="section3" class="min-h-screen relative flex flex-col md:flex-row h-screen w-screen">
 
         <!-- Form Screen (Screen 1) -->
         <form class=" w-full flex flex-col md:flex-row" id="upload-form" enctype="multipart/form-data">
             @csrf
 
-            <div class="flex flex-col justify-center items-center bg-blue md:w-1/2 py-8 px-24">
+            <div class="flex flex-col justify-center items-center bg-blue md:w-1/2 py-8 sm:py-16 px-24">
                 <div class="flex items-center mb-8">
                     <img src="{{ asset('images/number-one.png') }}" alt="number one" class="w-16 md:w-20 h-auto">
                     <h2 class="text-[60px] font-bold ml-4">Nahraj CV</h2>
@@ -126,7 +126,7 @@
 
             @include('partials.chevron')
 
-            <div class="flex flex-col justify-center items-center bg-light md:w-1/2 py-8 px-24">
+            <div class="flex flex-col justify-center items-center bg-light md:w-1/2 py-8 sm:py-16 px-24">
                 <div class="flex items-center mb-8">
                     <img src="{{ asset('images/number-two.png') }}" alt="number two" class="w-16 md:w-20 h-auto">
                     <h2 class="text-[60px] font-bold ml-4">Opíš prácu</h2>
